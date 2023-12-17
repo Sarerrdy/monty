@@ -24,7 +24,7 @@ void get_pstr(stack_t **stack, unsigned int line_number)
 	{
 		while (top_node != NULL)
 		{
-			if ((top_node->n > 0) && (isascii(top_node->n)))
+			if ((top_node->n > 0) && (_isascii(top_node->n)))
 			{
 				printf("%c", top_node->n);
 				top_node = top_node->next;
@@ -36,4 +36,16 @@ void get_pstr(stack_t **stack, unsigned int line_number)
 		}
 		printf("\n");
 	}
+}
+
+/**
+ * _isascii - function that check if value is  ascii char
+ * @c: ascii char equvalent
+ * Description: check if its ascii char
+ * Return: 0 if false else return 1
+ */
+
+int _isascii(int c)
+{
+	return (c >= 0 && c <= 127);
 }
